@@ -1,4 +1,4 @@
-from app import app
+from ovaimport.app_init import app
 import random
 from xml.dom import minidom
 

@@ -1,10 +1,10 @@
 import json
-from backend_logging import LOG
+from ovaimport.modules.backend_logging import LOG
 from flask import Blueprint, request
-from openstack.session import get_valid_session
-from openstack.nova import NovaClient
-from openstack.glance import GlanceClient
-from openstack.heat import HeatClient
+from ovaimport.modules.openstack.session import get_valid_session
+from ovaimport.modules.openstack.nova import NovaClient
+from ovaimport.modules.openstack.glance import GlanceClient
+from ovaimport.modules.openstack.heat import HeatClient
 
 mod = Blueprint('status', __name__)
 

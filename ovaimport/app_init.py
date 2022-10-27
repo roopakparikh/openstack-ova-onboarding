@@ -10,16 +10,16 @@ app.config['PUBLIC_NET'] = 'private'
 app.config['HEAT_VERSION'] = '2014-10-16'
 app.config['PORT_RANGE'] = range(2200, 3000)
 
-from modules import serve_static
+from ovaimport.modules import serve_static
 app.register_blueprint(serve_static.mod, url_prefix='/')
 
-from modules import status
+from ovaimport.modules import status
 app.register_blueprint(status.mod)
 
-from modules import upload
+from ovaimport.modules import upload
 app.register_blueprint(upload.mod)
 
-from modules import generate
+from ovaimport.modules import generate
 app.register_blueprint(generate.mod)
 
 

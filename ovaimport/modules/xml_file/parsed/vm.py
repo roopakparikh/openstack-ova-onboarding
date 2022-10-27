@@ -1,6 +1,6 @@
-from app.modules.xml_file.reader import get_text
+from ovaimport.modules.xml_file.reader import get_text
 
-from app import app
+from ovaimport.app_init import app
 
 
 def generate_template(vm_list):

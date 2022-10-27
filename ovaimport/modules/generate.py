@@ -1,12 +1,12 @@
 import uuid
 import tarfile
 import subprocess
-from app.modules.openstack.glance import GlanceClient
-from app.modules.openstack.nova import NovaClient
-from app.modules.xml_file.generate.generation import OVAFile
+from ovaimport.modules.openstack.glance import GlanceClient
+from ovaimport.modules.openstack.nova import NovaClient
+from ovaimport.modules.xml_file.generate.generation import OVAFile
 from flask import Blueprint, request
-from openstack.session import get_valid_session
-from backend_logging import LOG
+from ovaimport.modules.openstack.session import get_valid_session
+from ovaimport.modules.backend_logging import LOG
 import time
 import sys
 import os
@@ -14,7 +14,7 @@ import os
 
 mod = Blueprint('generating', __name__)
 
-from app import app
+from ovaimport.app_init import app
 
 temp_location = app.config['UPLOAD_FOLDER']
 

@@ -2,7 +2,7 @@ from flask import Blueprint
 
 mod = Blueprint('serve_static', __name__)
 
-from app import app
+from ovaimport.app_init import app
 
 
 @mod.route('/')

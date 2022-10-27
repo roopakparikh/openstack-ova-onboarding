@@ -1,4 +1,4 @@
-from app.modules.backend_logging import LOG
+from ovaimport.modules.backend_logging import LOG
 from novaclient import client
 
 

@@ -2,20 +2,20 @@ import os
 import shutil
 import yaml
 import uuid
-from backend_logging import LOG
+from ovaimport.modules.backend_logging import LOG
 from werkzeug.utils import secure_filename
-from app.modules.xml_file.parsed.file import extract_file, transform_parsed_vms
-from app.modules.xml_file.parsed.vm import generate_template
+from ovaimport.modules.xml_file.parsed.file import extract_file, transform_parsed_vms
+from ovaimport.modules.xml_file.parsed.vm import generate_template
 from flask import Blueprint, request
-from xml_file.reader import GeneratedVM
-from openstack.session import get_valid_session
-from openstack.glance import GlanceClient
-from openstack.nova import NovaClient, from_bytes_to_gb
-from openstack.heat import HeatClient
+from ovaimport.modules.xml_file.reader import GeneratedVM
+from ovaimport.modules.openstack.session import get_valid_session
+from ovaimport.modules.openstack.glance import GlanceClient
+from ovaimport.modules.openstack.nova import NovaClient, from_bytes_to_gb
+from ovaimport.modules.openstack.heat import HeatClient
 
 mod = Blueprint('uploading', __name__)
 
-from app import app
+from ovaimport.app_init import app
 
 temp_location = app.config['UPLOAD_FOLDER']
 

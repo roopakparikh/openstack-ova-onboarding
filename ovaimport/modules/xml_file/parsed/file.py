@@ -3,8 +3,8 @@ import uuid
 from xml.dom import minidom
 from shutil import copyfile
 
-from app.modules.xml_file.parsed.vm import ParsedVM
-from app.modules.xml_file.reader import VM
+from ovaimport.modules.xml_file.parsed.vm import ParsedVM
+from ovaimport.modules.xml_file.reader import VM
 from os.path import splitext
 
 
