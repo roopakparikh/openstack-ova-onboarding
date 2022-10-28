@@ -40,9 +40,10 @@ def upload():
     openstack = request.form
     region = openstack['region']
     session = get_valid_session(openstack)
+    token = session.token
     nova = NovaClient(session=session.session, version=2, region=region)
     glance = GlanceClient(session=session.session, version=2, region=region)
-    heat = HeatClient(version=1, endpoint=session.get_endpoint("heat", region), token=session.token)
+    heat = HeatClient(version=1, endpoint=session.get_endpoint("heat", region), token=token)
     image_list = []
     if nova.get_status() and glance.get_status() and heat.get_status():
         LOG.info("Connection to all services are established")

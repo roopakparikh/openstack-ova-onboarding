@@ -50,7 +50,8 @@ class TokenSession(BaseSession):
             token = v3.TokenMethod(token=self.token)
             return v3.Auth(auth_url=self.auth_url,
                            auth_methods=[token],
-                           project_id=self.tenant_id
+                           project_id=self.tenant_id,
+                           domain_name="default"
                            )
 
 
@@ -71,7 +72,8 @@ class LogInSession(BaseSession):
             auth_url=self.auth_url,
             username=self.username,
             password=self.password,
-            project_id=self.tenant_id)
+            project_id=self.tenant_id,
+            user_domain_name="default")
         return auth
 
 
